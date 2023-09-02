@@ -28,12 +28,26 @@ public class Main
 		while (sc.hasNextLine())
 		{
 		    String line = sc.nextLine();
-		    //If the line is a comment, it is useless to us.
 		    if (line.startsWith("--") == false && n < TotalQuestions)
 		    {
-		        //Make string lowercase
 		        line = line.toLowerCase();
-		        //Save in array
+		        char[] lineSyntax = line.toCharArray();
+		        String NewLine = "";
+		        for (int i = 0; i < line.length(); i++)
+		        {
+		            //<, >, <=, >=, =, ==, 
+		            case
+		            if ((lineSyntax[i] == '=' || lineSyntax[i] == '<' || lineSyntax[i] == '>') && (i - 1) >= 0 && lineSyntax[i - 1] != ' ' && lineSyntax[i - 1] != '>' && lineSyntax[i - 1] != '<')
+		            {
+		                NewLine = NewLine + " ";
+		            }
+		            NewLine = NewLine + lineSyntax[i];
+		            if ((lineSyntax[i] == '=' || lineSyntax[i] == ',' || lineSyntax[i] == '<' || lineSyntax[i] == '>') && (i + 1) < line.length() && lineSyntax[i + 1] != ' ' && lineSyntax[i + 1] != '=')
+		            {
+		                NewLine = NewLine + " ";
+		            }
+		        }
+		        line = NewLine;
 		        Submission[n] = line;
 		        n++;
 		    }
@@ -44,7 +58,7 @@ public class Main
 		String IncorrectAnswers = "";
 		for (int i = 0; i < TotalQuestions; i++)
 		{
-		    if (Answers[i] == Submission[i])
+		    if (Answers[i].equalsIgnoreCase(Submission[i]))
 		    {
 		        CorrectAnswers++;
 		    }
