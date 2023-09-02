@@ -35,16 +35,68 @@ public class Main
 		        String NewLine = "";
 		        for (int i = 0; i < line.length(); i++)
 		        {
-		            //<, >, <=, >=, =, ==, 
-		            case
-		            if ((lineSyntax[i] == '=' || lineSyntax[i] == '<' || lineSyntax[i] == '>') && (i - 1) >= 0 && lineSyntax[i - 1] != ' ' && lineSyntax[i - 1] != '>' && lineSyntax[i - 1] != '<')
+		            switch (lineSyntax[i])
 		            {
-		                NewLine = NewLine + " ";
-		            }
-		            NewLine = NewLine + lineSyntax[i];
-		            if ((lineSyntax[i] == '=' || lineSyntax[i] == ',' || lineSyntax[i] == '<' || lineSyntax[i] == '>') && (i + 1) < line.length() && lineSyntax[i + 1] != ' ' && lineSyntax[i + 1] != '=')
-		            {
-		                NewLine = NewLine + " ";
+		                case ' ':
+		                {
+		                    if (NewLine.charAt(NewLine.length() - 1) != ' ')
+		                    {
+		                        NewLine = NewLine + lineSyntax[i];
+		                    }
+		                    break;
+		                }
+		                case '<':
+		                {
+		                    if ((i - 1) >= 0 && lineSyntax[i - 1] != ' ')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    NewLine = NewLine + lineSyntax[i];
+		                    if ((i + 1) < line.length() && lineSyntax[i + 1] != ' ' && lineSyntax[i + 1] != '=')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    break;
+		                }
+		                case '>':
+		                {
+		                    if ((i - 1) >= 0 && lineSyntax[i - 1] != ' ')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    NewLine = NewLine + lineSyntax[i];
+		                    if ((i + 1) < line.length() && lineSyntax[i + 1] != ' ' && lineSyntax[i + 1] != '=')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    break;
+		                }
+		                case '=':
+		                {
+		                    if ((i - 1) >= 0 && lineSyntax[i - 1] != ' ' && lineSyntax[i - 1] != '>' && lineSyntax[i - 1] != '<')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    NewLine = NewLine + lineSyntax[i];
+		                    if ((i + 1) < line.length() && lineSyntax[i + 1] != ' ')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    break;
+		                }
+		                case ',':
+		                {
+		                    NewLine = NewLine + lineSyntax[i];
+		                    if ((i + 1) < line.length() && lineSyntax[i + 1] != ' ')
+		                    {
+		                        NewLine = NewLine + ' ';
+		                    }
+		                    break;
+		                }
+		                default:
+		                {
+		                    NewLine = NewLine + lineSyntax[i];
+		                }
 		            }
 		        }
 		        line = NewLine;
