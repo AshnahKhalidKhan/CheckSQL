@@ -1,6 +1,6 @@
 SELECT * FROM employees WHERE department_id = 40;
-SELECT last_name, salary FROM employees WHERE job_id  = 'IT_PROG';
-SELECT last_name, email FROM employees WHERE hire_date  = '07-JUN-02';
+SELECT last_name, salary FROM employees WHERE job_id = 'IT_PROG';
+SELECT last_name, email FROM employees WHERE hire_date = '07-JUN-02';
 SELECT * FROM employees WHERE hire_date > '01-JUN-06' AND department_id > 60;
 SELECT * FROM employees WHERE hire_date BETWEEN '01-JUN-07' AND '01-DEC-07';
 SELECT * FROM employees WHERE salary < 5000;
