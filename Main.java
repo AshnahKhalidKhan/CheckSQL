@@ -15,6 +15,7 @@ public class Main
 		    if (line.startsWith("--") == false)
 		    {
 		        //Make string lowercase
+		        line = line.toLowerCase();
 		        //Save in array
 		        //Compare arrays
 		        //Count correct ones
