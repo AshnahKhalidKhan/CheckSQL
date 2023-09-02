@@ -12,8 +12,14 @@ public class Main
 		    //System.out.println(sc.nextLine());
 		    String line = sc.nextLine();
 		    //If the line is a comment, it is useless to us.
-		    if (line.startsWith("--"))
+		    if (line.startsWith("--") == false)
 		    {
+		        //Make string lowercase
+		        //Save in array
+		        //Compare arrays
+		        //Count correct ones
+		        //Count incorrect ones and mark them
+		        //Generate final mark
 		        System.out.println(line);
 		    }
 		}
