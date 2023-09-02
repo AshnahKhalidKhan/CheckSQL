@@ -43,6 +43,10 @@ public class Main
 		                    {
 		                        NewLine = NewLine + lineSyntax[i];
 		                    }
+		                    else if ((i + 1) < line.length() && lineSyntax[i + 1] == ')')
+		                    {
+		                        i++;
+		                    }
 		                    break;
 		                }
 		                case '<':
@@ -90,6 +94,15 @@ public class Main
 		                    if ((i + 1) < line.length() && lineSyntax[i + 1] != ' ')
 		                    {
 		                        NewLine = NewLine + ' ';
+		                    }
+		                    break;
+		                }
+		                case '(':
+		                {
+		                    NewLine = NewLine + lineSyntax[i];
+		                    if ((i + 1) < line.length() && lineSyntax[i + 1] == ' ')
+		                    {
+		                        i++;
 		                    }
 		                    break;
 		                }
