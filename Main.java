@@ -41,11 +41,11 @@ public class Main
 		                {
 		                    if (NewLine.charAt(NewLine.length() - 1) != ' ')
 		                    {
-		                        NewLine = NewLine + lineSyntax[i];
-		                    }
-		                    else if ((i + 1) < line.length() && lineSyntax[i + 1] == ')')
-		                    {
-		                        i++;
+                                if ((i + 1) < line.length() && (lineSyntax[i + 1] == ')' || lineSyntax[i + 1] == ','))
+    		                    {
+    		                        i++;
+    		                    }
+    		                    NewLine = NewLine + lineSyntax[i];
 		                    }
 		                    break;
 		                }
