@@ -141,18 +141,6 @@ public class Main
 		    }
 		}
 		
-// 		System.out.println("PRINTING ANSWERS HERE");
-// 		for (int i = 0; i < TotalQuestions; i++)
-// 		{
-// 		    System.out.println(Answers[i]);
-// 		}
-	
-// 		System.out.println("PRINTING SUBMISSION HERE");	
-// 		for (int i = 0; i < TotalQuestions; i++)
-// 		{
-// 		    System.out.println(Submission[i]);
-// 		}
-		
 		double FinalMarks = ((double) CorrectAnswers / (double) TotalQuestions) * 6.0;
 	    System.out.println("FINAL GRADE:\nCorrect Answers = " + CorrectAnswers + "\nIncorrect Answers = " + IncorrectAnswers + "\nScore = " + FinalMarks);
 	}
