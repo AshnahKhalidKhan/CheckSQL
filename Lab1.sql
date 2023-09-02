@@ -1,4 +1,3 @@
-select * from employees;
 select  * from employees where  DEPARTMENT_ID=40;
 select LAST_NAME,SALARY from employees where JOB_ID = 'IT_PROG';
 select  LAST_NAME, EMAIL from employees where HIRE_DATE = '07-JUN-02';
