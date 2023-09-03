@@ -2,8 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.Border;
 
-public class Screen extends JFrame
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Screen extends JFrame implements ActionListener
 {
+    JButton Checkmark;
+
     Screen()
     {
         // Location/size
@@ -75,9 +80,34 @@ public class Screen extends JFrame
         SubmissionHeading.setText("SUBMISSION FILE");
         SubmissionHeading.setHorizontalAlignment(JLabel.CENTER);
         SubmissionHeading.setVerticalAlignment(JLabel.TOP);
-        
+
+        // ------------------------------------------------------------------------
+
+        Checkmark = new JButton();
+        this.add(Checkmark);
+        Checkmark.setBounds(460, 10, 80, 50);
+        Checkmark.addActionListener(this);
+        Checkmark.setText("Button");
+        Checkmark.setHorizontalTextPosition(JButton.CENTER);
+        Checkmark.setVerticalTextPosition(JButton.CENTER);
+        Checkmark.setFont(new Font("Comic Sans", Font.BOLD, 10));
+        Checkmark.setForeground(Color.CYAN);
+        Checkmark.setBackground(Color.DARK_GRAY);
+        Checkmark.setBorder(BorderFactory.createDashedBorder(Color.WHITE));
+        Checkmark.setFocusable(false);
+        ImageIcon Tick = new ImageIcon("Tick.png");
+        Checkmark.setIcon(Tick);
 
         // this.pack();
 		this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if (e.getSource() == Checkmark)
+        {
+            System.out.println("Heyyyyyyyyyyy");
+        }
     }
 }
