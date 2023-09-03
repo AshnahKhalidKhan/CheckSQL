@@ -35,26 +35,47 @@ public class Screen extends JFrame
         // this.add(heading);
         // ImageIcon image = new ImageIcon("Checkmark.png");
         // heading.setIcon(image);
+
+        // ----------------------------------------------------------------
         
         JPanel AnswerSection = new JPanel();
         this.add(AnswerSection);
         AnswerSection.setBackground(Color.LIGHT_GRAY);
         AnswerSection.setBounds(0, 0, 450, 450);
+        AnswerSection.setLayout(new BorderLayout());
 
         JPanel CheckmarksSection = new JPanel();
         this.add(CheckmarksSection);
         CheckmarksSection.setBackground(Color.DARK_GRAY);
         CheckmarksSection.setBounds(450, 0, 100, 450);
+        CheckmarksSection.setLayout(new BorderLayout());
 
         JPanel SubmissionSection = new JPanel();
         this.add(SubmissionSection);
         SubmissionSection.setBackground(Color.LIGHT_GRAY);
         SubmissionSection.setBounds(550, 0, 450, 450);
+        SubmissionSection.setLayout(new BorderLayout());
 
         JPanel GradingSection = new JPanel();
         this.add(GradingSection);
         GradingSection.setBackground(Color.GRAY);
         GradingSection.setBounds(0, 450, 1000, 150);
+        GradingSection.setLayout(new BorderLayout());
+
+        // ------------------------------------------------------------------------
+
+        JLabel AnswerHeading = new JLabel();
+        AnswerSection.add(AnswerHeading);
+        AnswerHeading.setText("ANSWER FILE");
+        AnswerHeading.setHorizontalAlignment(JLabel.CENTER);
+        AnswerHeading.setVerticalAlignment(JLabel.TOP);
+
+        JLabel SubmissionHeading = new JLabel();
+        SubmissionSection.add(SubmissionHeading);
+        SubmissionHeading.setText("SUBMISSION FILE");
+        SubmissionHeading.setHorizontalAlignment(JLabel.CENTER);
+        SubmissionHeading.setVerticalAlignment(JLabel.TOP);
+        
 
         // this.pack();
 		this.setVisible(true);
