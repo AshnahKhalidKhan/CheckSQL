@@ -6,7 +6,8 @@ public class Main
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
-		Screen frame = new Screen();
+		// Screen frame = new Screen();
+		new Screen();
 
 	    int TotalQuestions = 27;
 	    
