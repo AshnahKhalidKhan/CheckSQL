@@ -48,7 +48,12 @@
 
 table, th, td
 {
-  border: 2px solid black;
   text-align: center;
   vertical-align: middle;
+}
+
+td
+{
+  border: 2px solid black;
+  border-radius: 10px;
 }
