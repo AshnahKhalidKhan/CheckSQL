@@ -54,6 +54,7 @@ table, th, td
 
 td
 {
+  color: rgb(39, 162, 39);
   border: 2px solid rgb(39, 162, 39);
   border-radius: 10px;
 }
