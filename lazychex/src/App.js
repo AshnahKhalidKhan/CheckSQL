@@ -21,7 +21,7 @@ function App() {
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-            <img src = "Tick.png" style = {{width: '5%', height: '5%'}}></img>
+            <img src = "Tick.png"></img>
             </td>
             <td>
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
@@ -32,7 +32,7 @@ function App() {
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-            <img src = "Cross.png" style = {{width: '5%', height: '5%'}}></img>
+            <img src = "Cross.png"></img>
             </td>
             <td>
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj

@@ -58,3 +58,10 @@ td
   border: 2px solid rgb(39, 162, 39);
   border-radius: 10px;
 }
+
+td img
+{
+  width: 5%;
+  height: 5%;
+  vertical-align: middle;
+}
