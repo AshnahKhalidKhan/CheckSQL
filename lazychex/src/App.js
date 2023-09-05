@@ -3,6 +3,9 @@ import './App.css';
 function App() {
   return (
     <div>
+      <div className = 'Title'>
+        <h1>LazyCheX or CheckSQL</h1>
+      </div>
       <table style = {{width: '100%'}}>
         <thead>
           <th style = {{colspan: 2}}>

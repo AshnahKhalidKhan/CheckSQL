@@ -46,6 +46,14 @@
   }
 }
 
+.Title
+{
+  text-align: center;
+  font-size: x-large;
+  text-decoration: underline;
+  text-underline-offset: 10%;
+}
+
 table, th, td
 {
   text-align: center;
