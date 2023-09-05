@@ -21,7 +21,18 @@ function App() {
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-            <img src = "Checkmark.png" style = {{width: '10%', height: '10%'}}></img>
+            <img src = "Tick.png" style = {{width: '5%', height: '5%'}}></img>
+            </td>
+            <td>
+              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+            </td>
+          </tr>
+          <tr>
+            <td>
+              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+            </td>
+            <td>
+            <img src = "Cross.png" style = {{width: '5%', height: '5%'}}></img>
             </td>
             <td>
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
