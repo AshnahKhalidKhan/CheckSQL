@@ -6,9 +6,9 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-      <div>
-        <input type = 'file' placeholder = 'Answer file goes here'></input>
-        <input type = 'file' placeholder = 'Submission file goes here'></input>
+      <div style = {{textAlign: 'center'}}>
+        <input type = 'file' placeholder = 'Answer file goes here' style = {{width: '50%'}}></input>
+        <input type = 'file' placeholder = 'Submission file goes here' style = {{width: '50%'}}></input>
       </div>
       <table style = {{width: '100%'}}>
         <thead>
