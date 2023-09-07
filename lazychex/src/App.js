@@ -1,4 +1,5 @@
 import './App.css';
+import QueryBox from './Components/QueryBox/QueryBox';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <h1>LazyCheX or CheckSQL</h1>
       </div>
       <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
+        <QueryBox/>
         <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
         <label for = 'AnswerFileInput'>Heyyyyyy</label>
