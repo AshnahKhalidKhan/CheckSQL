@@ -7,8 +7,9 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
+      <QueryBox/>
       <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
-        <QueryBox/>
+        
         <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
         <label for = 'AnswerFileInput'>Heyyyyyy</label>
