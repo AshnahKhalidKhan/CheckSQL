@@ -12,16 +12,20 @@
     color: rgb(63, 67, 63);
   }
   
-  .QueryBox h1, input {
+  .QueryBox h1 {
     width: 100%;
     border: 2px solid rgb(39, 162, 39);
     border-radius: 10px;
     padding: 1%;
   }
 
-  .QueryBox input
-  {
-    /* justify-self: center; */
-    
+  .QueryBox input {
+    display: block;
+    margin: 0 auto;
+    /* text-align: center; You can remove this if you want to center the text within the input */
+    border: 2px solid rgb(39, 162, 39);
+    border-radius: 10px;
+    padding: 1%;
+    width: 100%;
   }
   
