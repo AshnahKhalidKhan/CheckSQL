@@ -8,12 +8,10 @@
     color: rgb(63, 67, 63);
     border: 2px solid rgb(39, 162, 39);
     border-radius: 10px;
-    display: flex; justify-content: center;
 }
 
 .QueryBox h1
 {
     text-align: center;
-    
     border: 2px solid rgb(39, 162, 39);
 }
