@@ -3,9 +3,9 @@ import { CheckBox } from '@mui/icons-material';
 
 function QueryBox() {
     return (
-        <div className = 'Help'>
+        <div className = 'QueryBox'>
             <CheckBox/>
-            <h3>Something something</h3>
+            <h1>Something something</h1>
         </div>
     );
 }
