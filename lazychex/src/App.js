@@ -10,10 +10,10 @@ function App() {
       <QueryBox/>
       <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
         
-        <label for = 'AnswerFileInput'></label>
+        {/* <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
         <label for = 'AnswerFileInput'>Heyyyyyy</label>
-        <input id = 'SubmissionFileInput' type = 'file' placeholder = 'Submission file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
+        <input id = 'SubmissionFileInput' type = 'file' placeholder = 'Submission file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input> */}
       </div>
       <table style = {{width: '100%'}}>
         <thead>
