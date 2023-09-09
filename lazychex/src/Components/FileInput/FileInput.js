@@ -17,8 +17,7 @@ function FileInput({ onFileSelect }) {
         // ^Inside the onload handler, we access the file's content using e.target.result. This content is in the form of a string.
         onFileSelect(fileContent);
       };
-
-      reader.readAsText(file);
+      reader.readAsText(file); //readAsText works like Java wala Scanner
     }
   };
 
