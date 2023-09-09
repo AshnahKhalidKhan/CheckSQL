@@ -24,7 +24,7 @@ function App() {
         <label for = 'AnswerFileInput'>Heyyyyyy</label>
         <input id = 'SubmissionFileInput' type = 'file' placeholder = 'Submission file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input> */}
       </div>
-      <table style = {{width: '100%'}}>
+      {/* <table style = {{width: '100%'}}>
         <thead>
           <th style = {{colspan: 2}}>
             Answer File
@@ -60,7 +60,7 @@ function App() {
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
