@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 function App() {
   const [fileContent, setFileContent] = useState('');
 
-  const handleFileSelect = (content) => {
+  const handleFileSelect = (content) =>
+  {
     setFileContent(content);
   };
 
