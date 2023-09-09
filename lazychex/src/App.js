@@ -1,13 +1,22 @@
 import './App.css';
+import FileInput from './Components/FileInput/FileInput';
 import QueryBox from './Components/QueryBox/QueryBox';
+import React, { useState } from 'react';
 
 function App() {
+  const [fileContent, setFileContent] = useState('');
+
+  const handleFileSelect = (content) => {
+    setFileContent(content);
+  };
+
   return (
     <div>
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-      <QueryBox/>
+      <FileInput onFileSelect={handleFileSelect} />
+      <QueryBox fileContent={fileContent} />
       <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
         
         {/* <label for = 'AnswerFileInput'></label>
