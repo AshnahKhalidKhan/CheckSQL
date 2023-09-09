@@ -1,4 +1,5 @@
 import './QueryBox.css';
+import React from 'react';
 
 function QueryBox(props) {
     return (
