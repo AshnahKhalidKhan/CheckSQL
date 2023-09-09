@@ -1,0 +1,37 @@
+  [File Input Selected]
+           |
+           v
+   +-------------------+
+   |    handleFileChange  | (FileInput.js)
+   +-------------------+
+           |
+           v
+   +-------------------+
+   |    FileReader()     | (FileInput.js)
+   +-------------------+
+           |
+           v
+   +-------------------+
+   |     onload Event    | (FileInput.js)
+   +-------------------+
+           |
+           v
+   +-------------------+
+   |   onFileSelect()    | (Passed from Parent)
+   +-------------------+
+           |
+           v
+   +-------------------+
+   | Parent Component  |
+   | (e.g., App.js)    |
+   +-------------------+
+           |
+           v
+   +-------------------+
+   |   State Updated   | (Parent Component)
+   +-------------------+
+           |
+           v
+   +-------------------+
+   |      Render       | (Updated Content Displayed)
+   +-------------------+
