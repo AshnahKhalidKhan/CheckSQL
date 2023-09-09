@@ -1,6 +1,6 @@
 import './QueryBox.css';
 
-function QueryBox() {
+function QueryBox(props) {
     return (
         <div className = 'QueryBox'>
             <h1>Something something</h1>
