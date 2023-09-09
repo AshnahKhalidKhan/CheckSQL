@@ -1,3 +1,6 @@
+Certainly! Below is a step-by-step visual representation of the data flow and functions involved in the code, from the moment the file input is selected:
+
+```plaintext
   [File Input Selected]
            |
            v
@@ -35,3 +38,16 @@
    +-------------------+
    |      Render       | (Updated Content Displayed)
    +-------------------+
+```
+
+In this visual representation:
+
+1. The user selects a file in the File Input component.
+2. The `handleFileChange` function within the `FileInput.js` file is triggered when the input changes.
+3. Inside `handleFileChange`, a `FileReader` is created to read the selected file's contents.
+4. When the file is successfully loaded, the `onload` event (within `FileInput.js`) is triggered.
+5. The `onFileSelect` function, which is passed from the parent component (e.g., `App.js`), is called with the loaded file's content.
+6. In the parent component (`App.js` or similar), the state is updated with the received file content.
+7. The updated content is then rendered in the component, displaying the file's contents to the user.
+
+This visual diagram illustrates the flow of data and functions involved when a file input is selected and its content is processed and displayed in a React application.
