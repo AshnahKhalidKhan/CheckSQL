@@ -16,7 +16,7 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-        <FileInput onFileChange={handleFileSelect} />
+        <FileInput onFileSelect={handleFileSelect} />
         <QueryBox fileContent={fileContent} />
         <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
           <FileInput onFileChange={handleFileSelect} />
