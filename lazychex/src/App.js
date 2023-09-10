@@ -16,10 +16,10 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-        <FileInput onFChange={handleFileSelect} />
+        <FileInput onFileChange={handleFileSelect} />
         <QueryBox fileContent={fileContent} />
         <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
-          <FileInput onFChange={handleFileSelect} />
+          <FileInput onFileChange={handleFileSelect} />
           <QueryBox fileContent={fileContent} />
           
         {/* <label for = 'AnswerFileInput'></label>
