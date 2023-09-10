@@ -18,10 +18,9 @@ function App() {
       </div>
         <FileInput onFileSelect={handleFileSelect} />
         <QueryBox fileContent={fileContent} />
-        <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
-          <FileInput onFileSelect={handleFileSelect} />
-          <QueryBox fileContent={fileContent} />
-          
+        <FileInput onFileSelect={handleFileSelect} />
+        <QueryBox fileContent={fileContent} />
+        <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
         {/* <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
         <label for = 'AnswerFileInput'>Heyyyyyy</label>
