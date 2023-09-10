@@ -20,6 +20,7 @@ function App() {
         <QueryBox fileContent={fileContent} />
         <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>
           <FileInput onFChange={handleFileSelect} />
+          <QueryBox fileContent={fileContent} />
           
         {/* <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
