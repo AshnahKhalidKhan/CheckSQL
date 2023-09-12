@@ -24,16 +24,6 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-      {AnswerFileContent.map((line, index) =>
-        (
-          <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
-        )
-      )}
-      {SubmissionFileContent.map((line, index) =>
-        (
-          <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
-        )
-      )}
 
 
 
@@ -57,22 +47,32 @@ function App() {
             Answer File
           </th>
           <th>
-            Mark
+            Submission File
           </th>
           <th style = {{colspan: 2}}>
-            Submission File
+            Mark
           </th>
         </thead>
         <tbody>
+        {AnswerFileContent.map((line, index) =>
+          (
+            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+          )
+        )}
+        {SubmissionFileContent.map((line, index) =>
+          (
+            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+          )
+        )}
           <tr>
             <td>
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-            <img src = "Tick.png"></img>
+              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+            <img src = "Tick.png"></img>
             </td>
           </tr>
           <tr>
@@ -80,10 +80,10 @@ function App() {
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-            <img src = "Cross.png"></img>
+              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
             </td>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+            <img src = "Cross.png"></img>
             </td>
           </tr>
         </tbody>
