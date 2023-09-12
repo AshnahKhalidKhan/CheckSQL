@@ -22,12 +22,8 @@ function App() {
   return (
     <div>
       <div className = 'Title'>
-        <h1>LazyCheX or CheckSQL</h1>
+        <h1>LazyCheX or CheckSQL or find a name Ash</h1>
       </div>
-
-
-
-
       <div className = 'Section'>
         <div className = 'MakeThemAppearSideBySideInSameLine'>
           <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
