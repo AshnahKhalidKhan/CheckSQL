@@ -54,16 +54,28 @@ function App() {
           </th>
         </thead>
         <tbody>
+
         {AnswerFileContent.map((line, index) =>
           (
-            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+            <tr>
+              <td>
+                <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+              </td>
+              </tr>
           )
         )}
         {SubmissionFileContent.map((line, index) =>
           (
-            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+            <tr>
+              <td>
+                <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+              </td>
+            </tr>
           )
         )}
+
+
+
           <tr>
             <td>
               jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
