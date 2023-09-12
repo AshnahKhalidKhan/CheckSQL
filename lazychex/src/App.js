@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 function App() {
   /*
     1. Create separate state variables constants.
+    2. Create function to set state variables ya kya????
+    3. Include the actual thang into the component's div????
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
