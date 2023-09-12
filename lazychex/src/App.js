@@ -25,9 +25,20 @@ function App() {
         <h1>LazyCheX or CheckSQL</h1>
       </div>
         <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
-        <QueryBox id = 'AnswerFileInputDisplay' fileContent = {AnswerFileContent}/>
+        {/* <QueryBox id = 'AnswerFileInputDisplay' fileContent = {AnswerFileContent}/> */}
+        {AnswerFileContent.map((line, index) =>
+          (
+            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+          )
+        )}
         <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
         <QueryBox id = 'SubmissionFileInputDisplay' fileContent = {SubmissionFileContent}/>
+        {SubmissionFileContent.map((line, index) =>
+          (
+            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+          )
+        )}
+
         <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
         {/* <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
