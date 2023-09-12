@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div>
-      {/* <div className = 'Title'>
+      <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
       <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
@@ -35,17 +35,17 @@ function App() {
         (
           <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
         )
-      )} */}
+      )}
 
 
 
 
       <div className = 'Section'>
-        <div className = 'MakeThemAppearSideBySideInLine'>
-          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        <div className = 'MakeThemAppearSideBySideInSameLine'>
+          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
         </div>
-        <div className = 'MakeThemAppearSideBySideInLine'>
-          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        <div className = 'MakeThemAppearSideBySideInSameLine'>
+          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
         </div>
       </div>
 
