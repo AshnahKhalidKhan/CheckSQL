@@ -61,6 +61,12 @@
   text-align: center;
 }
 
+.MakeThemAppearSideBySideInLine
+{
+  display: inline-block;
+  text-align: center;
+}
+
 table, th, td
 {
   text-align: center;

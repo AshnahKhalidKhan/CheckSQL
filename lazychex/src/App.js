@@ -40,10 +40,19 @@ function App() {
 
 
 
-        <div className = 'Section'>
-        <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
-        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+      <div className = 'Section'>
+        <div className = 'MakeThemAppearSideBySideInLine'>
+          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        </div>
+        <div className = 'MakeThemAppearSideBySideInLine'>
+          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        </div>
       </div>
+
+
+
+
+
       <table style = {{width: '100%'}}>
         <thead>
           <th style = {{colspan: 2}}>
