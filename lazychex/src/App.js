@@ -4,11 +4,19 @@ import QueryBox from './Components/QueryBox/QueryBox';
 import React, { useState } from 'react';
 
 function App() {
-  const [fileContent, setFileContent] = useState('');
+  /*
+    1. Create separate state variables constants.
+  */
+  const [AnswerFileContent, setAnswerFileContent] = useState('');
+  const [SubmissionFileContent, setSubmissionFileContent] = useState('');
 
-  const handleFileSelect = (content) =>
+  const handleAnswerFileSelect = (file) =>
   {
-    setFileContent(content);
+    setAnswerFileContent(file);
+  };
+  const handleSubmissionFileSelect = (file) =>
+  {
+    setSubmissionFileContent(file);
   };
 
   return (
@@ -16,10 +24,10 @@ function App() {
       <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-        <FileInput onFileSelect={handleFileSelect} />
-        <QueryBox fileContent={fileContent} />
-        <FileInput onFileSelect={handleFileSelect} />
-        <QueryBox fileContent={fileContent} />
+        <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
+        <QueryBox id = 'AnswerFileInputDisplay' fileContent = {AnswerFileContent}/>
+        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
+        <QueryBox id = 'SubmissionFileInputDisplay' fileContent = {SubmissionFileContent}/>
         <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
         {/* <label for = 'AnswerFileInput'></label>
         <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>

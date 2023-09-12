@@ -1,7 +1,7 @@
 // FileInput.js
 import React, { useState } from 'react';
 
-function FileInput({ onFileSelect }) {
+function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs}) {
   const handleFileChange = (event) =>
   {
     const file = event.target.files[0];
@@ -23,7 +23,7 @@ function FileInput({ onFileSelect }) {
 
   return (
     <div>
-      <input type="file" accept=".txt" onChange={handleFileChange} />
+      <input type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs}/>
     </div>
   );
 }

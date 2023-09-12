@@ -6,7 +6,7 @@ function QueryBox(props) {
         <div className = 'QueryBox'>
             {/* <h1>Something something</h1> */}
             {/* <input id = 'AnswerFileInput' type = 'file'></input> */}
-            <h1 >{props.fileContent}</h1>
+            <h1>{props.fileContent}</h1>
         </div>
     );
 }
