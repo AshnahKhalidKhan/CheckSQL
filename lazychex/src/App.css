@@ -54,6 +54,13 @@
   text-underline-offset: 10%;
 }
 
+.Section
+{
+  width: 100%;
+  margin: 'auto';
+  text-align: center;
+}
+
 table, th, td
 {
   text-align: center;
