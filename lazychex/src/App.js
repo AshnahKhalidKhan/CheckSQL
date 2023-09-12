@@ -36,16 +36,15 @@ function App() {
       </div>
 
       {AnswerFileContent.map((line, index) =>
-          (
-            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
-          )
-        )}
-        {SubmissionFileContent.map((line, index) =>
-          (
-            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
-          )
-        )}
-
+        (
+          <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+        )
+      )}
+      {SubmissionFileContent.map((line, index) =>
+        (
+          <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+        )
+      )}
 
 
 
@@ -62,17 +61,12 @@ function App() {
           </th>
         </thead>
         <tbody>
-
-        
-
-
-
           <tr>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+              &lt;Answer File Query Here&gt;
             </td>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+              &lt;Submission File Query Here&gt;
             </td>
             <td>
             <img src = "Tick.png"></img>
@@ -80,10 +74,10 @@ function App() {
           </tr>
           <tr>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+              &lt;Answer File Query Here&gt;
             </td>
             <td>
-              jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+              &lt;Submission File Query Here&gt;
             </td>
             <td>
             <img src = "Cross.png"></img>
