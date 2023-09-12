@@ -40,9 +40,14 @@ function App() {
 
 
 
-      <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
-        <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
-        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
+        <label for = 'AnswerFileInput'></label>
+        <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
+        <label for = 'AnswerFileInput'>Heyyyyyy</label>
+        <input id = 'SubmissionFileInput' type = 'file' placeholder = 'Submission file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
+
+        {/* <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/> */}
       </div>
       <table style = {{width: '100%'}}>
         <thead>
