@@ -32,7 +32,7 @@ function App() {
           )
         )}
         <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
-        <QueryBox id = 'SubmissionFileInputDisplay' fileContent = {SubmissionFileContent}/>
+        {/* <QueryBox id = 'SubmissionFileInputDisplay' fileContent = {SubmissionFileContent}/> */}
         {SubmissionFileContent.map((line, index) =>
           (
             <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>

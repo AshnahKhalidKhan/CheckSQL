@@ -20,7 +20,6 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs}) {
         {
           onFileSelect(line); // Send each line to the callback
         }
-        onFileSelect(fileContent);
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
     }
