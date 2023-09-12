@@ -21,31 +21,30 @@ function App() {
 
   return (
     <div>
-      <div className = 'Title'>
+      {/* <div className = 'Title'>
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-        <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
-        {/* <QueryBox id = 'AnswerFileInputDisplay' fileContent = {AnswerFileContent}/> */}
-        {AnswerFileContent.map((line, index) =>
-          (
-            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
-          )
-        )}
-        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
-        {/* <QueryBox id = 'SubmissionFileInputDisplay' fileContent = {SubmissionFileContent}/> */}
-        {SubmissionFileContent.map((line, index) =>
-          (
-            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
-          )
-        )}
+      <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
+      {AnswerFileContent.map((line, index) =>
+        (
+          <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
+        )
+      )}
+      <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
+      {SubmissionFileContent.map((line, index) =>
+        (
+          <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
+        )
+      )} */}
 
-        <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
-        {/* <label for = 'AnswerFileInput'></label>
-        <input id = 'AnswerFileInput' type = 'file' placeholder = 'Answer file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input>
-        <label for = 'AnswerFileInput'>Heyyyyyy</label>
-        <input id = 'SubmissionFileInput' type = 'file' placeholder = 'Submission file goes here' style = {{textAlign: 'center', margin: 'auto'}}></input> */}
+
+
+
+      <div style = {{width: '100%', textAlign: 'center', margin: 'auto'}}>          
+        <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
+        <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' style = {{textAlign: 'center', margin: 'auto'}}/>
       </div>
-      {/* <table style = {{width: '100%'}}>
+      <table style = {{width: '100%'}}>
         <thead>
           <th style = {{colspan: 2}}>
             Answer File
@@ -81,7 +80,7 @@ function App() {
             </td>
           </tr>
         </tbody>
-      </table> */}
+      </table>
     </div>
   );
 }
