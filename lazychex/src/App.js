@@ -7,16 +7,16 @@ function App() {
   /*
     1. Create separate state variables constants.
   */
-  const [AnswerFileContent, setAnswerFileContent] = useState('');
-  const [SubmissionFileContent, setSubmissionFileContent] = useState('');
+  const [AnswerFileContent, setAnswerFileContent] = useState([]);
+  const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
 
-  const handleAnswerFileSelect = (file) =>
+  const handleAnswerFileSelect = (line) =>
   {
-    setAnswerFileContent(file);
+    setAnswerFileContent((previousLines) => [...previousLines, line]);
   };
-  const handleSubmissionFileSelect = (file) =>
+  const handleSubmissionFileSelect = (line) =>
   {
-    setSubmissionFileContent(file);
+    setSubmissionFileContent((previousLines) => [...previousLines, line]);
   };
 
   return (

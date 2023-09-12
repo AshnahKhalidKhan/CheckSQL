@@ -15,6 +15,11 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs}) {
       {
         const fileContent = e.target.result;
         // ^Inside the onload handler, we access the file's content using e.target.result. This content is in the form of a string.
+        const lines = fileContent.split('\n'); // Split content into lines
+        for (const line of lines)
+        {
+          onFileSelect(line); // Send each line to the callback
+        }
         onFileSelect(fileContent);
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
