@@ -37,20 +37,12 @@ function App() {
 
       {AnswerFileContent.map((line, index) =>
           (
-            <tr>
-              <td>
-                <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
-              </td>
-              </tr>
+            <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
           )
         )}
         {SubmissionFileContent.map((line, index) =>
           (
-            <tr>
-              <td>
-                <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
-              </td>
-            </tr>
+            <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
           )
         )}
 
