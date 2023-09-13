@@ -32,6 +32,14 @@ function App() {
     setSubmissionFileContent([]);
   };
 
+  const selectTickOrCross = (AnswerText, SubmissionText) =>
+  {
+    if (AnswerText === SubmissionText)
+      return "Tick.png";
+    else
+      return "Cross.png";
+  };
+
   // Define the number of rows based on the maximum lines between the two files.
   const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
 
@@ -84,7 +92,7 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img src = {AnswerFileContent[index] === SubmissionFileContent[index] ? "Tick.png" : "Cross.png"}/>
+                  <img src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])}/>
                 </td>
               </tr>
             )
