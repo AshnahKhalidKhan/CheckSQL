@@ -84,7 +84,7 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ''} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img src = "Tick.png"/>
+                  <img src = {AnswerFileContent[index] === SubmissionFileContent[index] ? 'Tick.png' : 'Cross.png'}/>
                 </td>
               </tr>
             )
