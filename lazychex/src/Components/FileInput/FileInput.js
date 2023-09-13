@@ -1,7 +1,8 @@
 // FileInput.js
 import React, { useState } from 'react';
 
-function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs}) {
+function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs})
+{
   const handleFileChange = (event) =>
   {
     const file = event.target.files[0];

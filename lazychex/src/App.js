@@ -21,10 +21,13 @@ function App() {
     setSubmissionFileContent((previousLines) => [...previousLines, line]);
   };
 
+  // Define the number of rows based on the maximum lines between the two files.
+  const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
+
   return (
     <div>
       <div className = 'Title'>
-        <h1>LazyCheX or CheckSQL or find a name Ash</h1>
+        <h1>LazyCheX or CheckSQL</h1>
       </div>
       <div className = 'Section'>
         <div className = 'MakeThemAppearSideBySideInSameLine'>
@@ -35,6 +38,7 @@ function App() {
         </div>
       </div>
 
+      {/* THIS IS AN IMPORTANT COMMENT ---> We learned a lot from this, Ash.
       {AnswerFileContent.map((line, index) =>
         (
           <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {line} key = {`AnswerFileInputDisplay${index}`}/>
@@ -44,45 +48,36 @@ function App() {
         (
           <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {line} key = {`SubmissionFileInputDisplay${index}`}/>
         )
-      )}
+      )} */}
 
-
-
-      <table style = {{width: '100%'}}>
+      <table>
         <thead>
-          <th style = {{colspan: 2}}>
+          <th className = "EqualWidthColumns">
             Answer File
           </th>
-          <th>
+          <th className = "EqualWidthColumns">
             Submission File
           </th>
-          <th style = {{colspan: 2}}>
+          <th className = "ColumnWithOneFifthWidthOfTable">
             Mark
           </th>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              &lt;Answer File Query Here&gt;
-            </td>
-            <td>
-              &lt;Submission File Query Here&gt;
-            </td>
-            <td>
-            <img src = "Tick.png"></img>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              &lt;Answer File Query Here&gt;
-            </td>
-            <td>
-              &lt;Submission File Query Here&gt;
-            </td>
-            <td>
-            <img src = "Cross.png"></img>
-            </td>
-          </tr>
+          {Array.from({length: totalQuestions}).map((_, index) =>
+            (
+              <tr key = {`row${index}`}>
+                <td>
+                  <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {AnswerFileContent[index] || ''} key = {`AnswerFileInputDisplay${index}`}/>
+                </td>
+                <td>
+                  <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ''} key = {`SubmissionFileInputDisplay${index}`}/>
+                </td>
+                <td>
+                  <img src = "Tick.png"/>
+                </td>
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     </div>

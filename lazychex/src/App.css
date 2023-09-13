@@ -67,22 +67,51 @@
   text-align: center;
 }
 
+table
+{
+  width: 100%;
+}
+
 table, th, td
 {
   text-align: center;
   vertical-align: middle;
 }
 
-td
+/* td
 {
   color: rgb(39, 162, 39);
   border: 2px solid rgb(39, 162, 39);
   border-radius: 10px;
-}
+} */
 
 td img
 {
-  width: 5%;
-  height: 5%;
+  width: 50%;
+  height: 50%;
+  vertical-align: middle;
+  border: 2px solid rgb(39, 162, 39);
+  border-radius: 10px;
+}
+
+.EqualWidthColumns
+{
+  width: 45%;
+  column-span: 2;
+  border: 2px solid rgb(39, 162, 39);
+  border-radius: 10px;
+}
+
+.ColumnWithOneFifthWidthOfTable
+{
+  width: 10%;
+  border: 2px solid rgb(39, 162, 39);
+  border-radius: 10px;
+}
+
+.ColumnWithOneFifthWidthOfTable img
+{
+  width: 50%;
+  height: 50%;
   vertical-align: middle;
 }
