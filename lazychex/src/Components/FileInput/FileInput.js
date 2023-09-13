@@ -1,7 +1,7 @@
 // FileInput.js
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs})
+function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {
   const handleFileChange = (event) =>
   {
@@ -17,6 +17,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs})
         const fileContent = e.target.result;
         // ^Inside the onload handler, we access the file's content using e.target.result. This content is in the form of a string.
         const lines = fileContent.split('\n'); // Split content into lines
+        clearContent(); // Clear content before adding new lines
         for (const line of lines)
         {
           onFileSelect(line); // Send each line to the callback

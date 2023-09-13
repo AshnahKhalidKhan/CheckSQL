@@ -1,7 +1,7 @@
 import './App.css';
 import FileInput from './Components/FileInput/FileInput';
 import QueryBox from './Components/QueryBox/QueryBox';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 function App() {
   /*
@@ -21,6 +21,17 @@ function App() {
     setSubmissionFileContent((previousLines) => [...previousLines, line]);
   };
 
+  // Function to clear the content
+  const clearAnswerFileInputContent = () =>
+  {
+    setAnswerFileContent([]);
+  };
+
+  const clearSubmissionFileInputContent = () =>
+  {
+    setSubmissionFileContent([]);
+  };
+
   // Define the number of rows based on the maximum lines between the two files.
   const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
 
@@ -31,10 +42,10 @@ function App() {
       </div>
       <div className = 'Section'>
         <div className = 'MakeThemAppearSideBySideInSameLine'>
-          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput'/>
+          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' clearContent = {clearAnswerFileInputContent}/>
         </div>
         <div className = 'MakeThemAppearSideBySideInSameLine'>
-          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput'/>
+          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' clearContent = {clearSubmissionFileInputContent}/>
         </div>
       </div>
 
