@@ -34,7 +34,7 @@ function App() {
 
   const selectTickOrCross = (AnswerText, SubmissionText) =>
   {
-    if (AnswerText === SubmissionText)
+    if (AnswerText == SubmissionText)
       return "Tick.png";
     else
       return "Cross.png";
