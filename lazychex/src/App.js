@@ -1,13 +1,13 @@
-import './App.css';
-import FileInput from './Components/FileInput/FileInput';
-import QueryBox from './Components/QueryBox/QueryBox';
-import React, {useState} from 'react';
+import "./App.css";
+import FileInput from "./Components/FileInput/FileInput";
+import QueryBox from "./Components/QueryBox/QueryBox";
+import React, {useState} from "react";
 
 function App() {
   /*
     1. Create separate state variables constants.
     2. Create function to set state variables ya kya????
-    3. Include the actual thang into the component's div????
+    3. Include the actual thang into the component"s div????
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
@@ -37,15 +37,15 @@ function App() {
 
   return (
     <div>
-      <div className = 'Title'>
+      <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-      <div className = 'Section'>
-        <div className = 'MakeThemAppearSideBySideInSameLine'>
-          <FileInput id = 'AnswerFileInput' onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = 'AnswerFileInput' clearContent = {clearAnswerFileInputContent}/>
+      <div className = "Section">
+        <div className = "MakeThemAppearSideBySideInSameLine">
+          <FileInput id = "AnswerFileInput" onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = "AnswerFileInput" clearContent = {clearAnswerFileInputContent}/>
         </div>
-        <div className = 'MakeThemAppearSideBySideInSameLine'>
-          <FileInput id = 'SubmissionFileInput' onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = 'SubmissionFileInput' clearContent = {clearSubmissionFileInputContent}/>
+        <div className = "MakeThemAppearSideBySideInSameLine">
+          <FileInput id = "SubmissionFileInput" onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = "SubmissionFileInput" clearContent = {clearSubmissionFileInputContent}/>
         </div>
       </div>
 
@@ -78,13 +78,13 @@ function App() {
             (
               <tr key = {`row${index}`}>
                 <td>
-                  <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {AnswerFileContent[index] || ''} key = {`AnswerFileInputDisplay${index}`}/>
+                  <QueryBox id = {`AnswerFileInputDisplay${index}`} fileContent = {AnswerFileContent[index] || ""} key = {`AnswerFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ''} key = {`SubmissionFileInputDisplay${index}`}/>
+                  <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img src = {AnswerFileContent[index] === SubmissionFileContent[index] ? 'Tick.png' : 'Cross.png'}/>
+                  <img src = {AnswerFileContent[index] === SubmissionFileContent[index] ? "Tick.png" : "Cross.png"}/>
                 </td>
               </tr>
             )
