@@ -11,7 +11,7 @@ function App() {
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
-  const [Mark, setMark] = useState([]);
+  // const [Mark, setMark] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
 
   const handleAnswerFileSelect = (line) =>
@@ -34,10 +34,10 @@ function App() {
     setSubmissionFileContent([]);
   };
 
-  const clearMark = () =>
-  {
-    setMark([]);
-  };
+  // const clearMark = () =>
+  // {
+  //   setMark([]);
+  // };
 
   const selectTickOrCross = (AnswerText, SubmissionText) =>
   {
@@ -49,17 +49,17 @@ function App() {
       return "Cross.png";
   };
 
-  const changeImage = (imageKaNaam, index) =>
-  {
-    if (imageKaNaam == "Tick.png")
-    {
-      Mark[index] = "Cross.png";
-    }
-    else
-    {
-      Mark[index] = "Tick.png";
-    }
-  }
+  // const changeImage = (imageKaNaam, index) =>
+  // {
+  //   if (imageKaNaam == "Tick.png")
+  //   {
+  //     Mark[index] = "Cross.png";
+  //   }
+  //   else
+  //   {
+  //     Mark[index] = "Tick.png";
+  //   }
+  // }
 
   useEffect(() =>
   {
