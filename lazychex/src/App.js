@@ -57,6 +57,22 @@ function App() {
     setCorrectAnswers(correctAnswers);
   }, [AnswerFileContent, SubmissionFileContent]);
 
+  // Function to toggle the image source
+  const toggleImage = () => {
+    if (isTick) {
+      setIsTick(false);
+    } else {
+      setIsTick(true);
+    }
+  };
+
+  let imgSrc;
+  if (isTick) {
+    imgSrc = "Tick.png";
+  } else {
+    imgSrc = "Cross.png";
+  }
+
   // Define the number of rows based on the maximum lines between the two files.
   const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
 
@@ -68,6 +84,13 @@ function App() {
       <div>
         <h1>{CorrectAnswers}</h1>
       </div>
+      <div>
+        <h1>Toggle Image</h1>
+        <img src={imgSrc} alt="Tick or Cross" onClick={toggleImage} />
+      </div>
+
+
+
       <div className = "Section">
         <div className = "MakeThemAppearSideBySideInSameLine">
           <FileInput id = "AnswerFileInput" onFileSelect = {handleAnswerFileSelect} uniqueKeyPropToDifferentiateInputs = "AnswerFileInput" clearContent = {clearAnswerFileInputContent}/>
