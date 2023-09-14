@@ -1,7 +1,7 @@
 import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function App() {
   /*
@@ -12,6 +12,7 @@ function App() {
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
+  const [isTick, setIsTick] = useState(false);
 
   const handleAnswerFileSelect = (line) =>
   {
@@ -42,6 +43,19 @@ function App() {
     else
       return "Cross.png";
   };
+
+  useEffect(() =>
+  {
+    let correctAnswers = 0;
+    for (let index = 0; index < Math.min(AnswerFileContent.length, SubmissionFileContent.length); index++)
+    {
+      if (AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
+      {
+        correctAnswers++;
+      }
+    }
+    setCorrectAnswers(correctAnswers);
+  }, [AnswerFileContent, SubmissionFileContent]);
 
   // Define the number of rows based on the maximum lines between the two files.
   const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
