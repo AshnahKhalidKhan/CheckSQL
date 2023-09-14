@@ -139,10 +139,10 @@
 
 // export default App;
 
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
-import React, { useState, useEffect } from "react";
 
 function App() {
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
@@ -173,14 +173,13 @@ function App() {
     }
   };
 
+  // Function to toggle image source
   const toggleImage = (index) => {
     const newAnswerFileContent = [...AnswerFileContent];
     if (newAnswerFileContent[index] === "Tick.png") {
       newAnswerFileContent[index] = "Cross.png";
-      setCorrectAnswers((count) => count - 1);
     } else {
       newAnswerFileContent[index] = "Tick.png";
-      setCorrectAnswers((count) => count + 1);
     }
     setAnswerFileContent(newAnswerFileContent);
   };
@@ -264,7 +263,10 @@ function App() {
               </td>
               <td>
                 <img
-                  src={AnswerFileContent[index]}
+                  src={selectTickOrCross(
+                    AnswerFileContent[index],
+                    SubmissionFileContent[index]
+                  )}
                   onClick={() => toggleImage(index)}
                   style={{ cursor: "pointer" }}
                 />
