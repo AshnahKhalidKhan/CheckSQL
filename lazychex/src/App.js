@@ -37,7 +37,6 @@ function App() {
   {
     if (AnswerText == SubmissionText)
     {
-      setCorrectAnswers(CorrectAnswers + 1);
       return "Tick.png";
     }
     else
