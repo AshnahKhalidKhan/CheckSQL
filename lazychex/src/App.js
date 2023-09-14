@@ -148,6 +148,7 @@ function App() {
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
+  const [Image, setImage] = useState("");
 
   const handleAnswerFileSelect = (line) => {
     setAnswerFileContent((previousLines) => [...previousLines, line]);
@@ -174,14 +175,22 @@ function App() {
   };
 
   // Function to toggle image source
-  const toggleImage = (index) => {
-    const newAnswerFileContent = [...AnswerFileContent];
-    if (newAnswerFileContent[index] === "Tick.png") {
-      newAnswerFileContent[index] = "Cross.png";
-    } else {
-      newAnswerFileContent[index] = "Tick.png";
+  let toggleImage = (image) => {
+    // const newAnswerFileContent = [...AnswerFileContent];
+    // if (newAnswerFileContent[index] === "Tick.png") {
+    //   newAnswerFileContent[index] = "Cross.png";
+    // } else {
+    //   newAnswerFileContent[index] = "Tick.png";
+    // }
+    // setAnswerFileContent(newAnswerFileContent);
+    if (image  === "Tick.png")
+    {
+      setImage("Cross.png");
     }
-    setAnswerFileContent(newAnswerFileContent);
+    else
+    {
+      setImage("Tick.png");
+    }
   };
 
   useEffect(() => {
@@ -262,12 +271,12 @@ function App() {
                 />
               </td>
               <td>
-                <img
-                  src={selectTickOrCross(
+                <img id={`Mark${index}`}
+                  src={Image = () => {selectTickOrCross(
                     AnswerFileContent[index],
                     SubmissionFileContent[index]
-                  )}
-                  onClick={() => toggleImage(index)}
+                  )}}
+                  onClick={() => toggleImage(Image)}
                   style={{ cursor: "pointer" }}
                 />
               </td>
