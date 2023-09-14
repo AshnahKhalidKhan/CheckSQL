@@ -11,6 +11,7 @@ function App() {
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
+  const [CorrectAnswers, setCorrectAnswers] = useState(0);
 
   const handleAnswerFileSelect = (line) =>
   {
@@ -35,7 +36,10 @@ function App() {
   const selectTickOrCross = (AnswerText, SubmissionText) =>
   {
     if (AnswerText == SubmissionText)
+    {
+      setCorrectAnswers(CorrectAnswers + 1);
       return "Tick.png";
+    }
     else
       return "Cross.png";
   };
@@ -47,6 +51,9 @@ function App() {
     <div>
       <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
+      </div>
+      <div>
+        <h1>{CorrectAnswers}</h1>
       </div>
       <div className = "Section">
         <div className = "MakeThemAppearSideBySideInSameLine">
