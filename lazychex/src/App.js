@@ -11,7 +11,7 @@ function App() {
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
-  // const [Mark, setMark] = useState([]);
+  const [Mark, setMark] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
 
   const handleAnswerFileSelect = (line) =>
@@ -39,27 +39,32 @@ function App() {
   //   setMark([]);
   // };
 
-  const selectTickOrCross = (AnswerText, SubmissionText) =>
+  const selectTickOrCross = (AnswerText, SubmissionText, index) =>
   {
+    console.log("AnswerText: ", AnswerText, "SubmissionText: ", SubmissionText, "index: ", index);
     if (AnswerText == SubmissionText)
     {
-      return "Tick.png";
+      Mark[index] = "Tick.png";
     }
     else
-      return "Cross.png";
+      Mark[index] = "Cross.png";
   };
 
-  // const changeImage = (imageKaNaam, index) =>
-  // {
-  //   if (imageKaNaam == "Tick.png")
-  //   {
-  //     Mark[index] = "Cross.png";
-  //   }
-  //   else
-  //   {
-  //     Mark[index] = "Tick.png";
-  //   }
-  // }
+  const changeImage = (imageKaNaam, index) =>
+  {
+    if (imageKaNaam == "Tick.png")
+    {
+      Mark[index] = "Cross.png";
+      // let a = CorrectAnswers - 1;
+      // setCorrectAnswers(a);
+    }
+    else
+    {
+      Mark[index] = "Tick.png";
+      // let a = CorrectAnswers + 1;
+      // setCorrectAnswers(a);
+    }
+  }
 
   useEffect(() =>
   {
@@ -69,10 +74,13 @@ function App() {
       if (AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
       {
         correctAnswers++;
+        selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index], index);
       }
     }
     setCorrectAnswers(correctAnswers);
   }, [AnswerFileContent, SubmissionFileContent]);
+
+  
 
   // Define the number of rows based on the maximum lines between the two files.
   const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
@@ -81,6 +89,8 @@ function App() {
     <div>
       <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
+      </div>
+      <div>
         <h1>Correct Answers: {CorrectAnswers}</h1>
       </div>
       <div className = "Section">
@@ -127,7 +137,10 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/>
+                  {/* <img src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {}/> */}
+                  {/* <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/> */}
+                  <img id = {`Mark${index}`} src = {Mark[index]} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/>
+
                 </td>
               </tr>
             )
