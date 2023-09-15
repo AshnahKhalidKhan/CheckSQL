@@ -43,7 +43,7 @@ function App() {
       return "Cross.png";
   };
 
-  const toggleImage = (index) =>
+  const changeFromTickToCrossAndFromCrossToTick = (index) =>
   {
     if (document.getElementById(`Mark${index}`).src.endsWith("Tick.png"))
     // Alternately, I can try this: if (img.src == "http://localhost:3000/Tick.png")
@@ -127,7 +127,7 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {() => toggleImage(index)}/>
+                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {() => changeFromTickToCrossAndFromCrossToTick(index)}/>
                 </td>
               </tr>
             )
