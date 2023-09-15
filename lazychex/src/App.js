@@ -18,12 +18,12 @@ function App() {
   {
     setAnswerFileContent((previousLines) => [...previousLines, line]);
   };
+
   const handleSubmissionFileSelect = (line) =>
   {
     setSubmissionFileContent((previousLines) => [...previousLines, line]);
   };
 
-  // Function to clear the content
   const clearAnswerFileInputContent = () =>
   {
     setAnswerFileContent([]);
@@ -33,11 +33,6 @@ function App() {
   {
     setSubmissionFileContent([]);
   };
-
-  // const clearMark = () =>
-  // {
-  //   setMark([]);
-  // };
 
   const selectTickOrCross = (AnswerText, SubmissionText, index) =>
   {
