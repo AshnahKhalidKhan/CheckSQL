@@ -45,22 +45,18 @@ function App() {
 
   useEffect(() =>
   {
-    let correctAnswers = 0;
-    for (let index = 0; index < Math.min(AnswerFileContent.length, SubmissionFileContent.length); index++)
+    let countingCorrectAnswers = 0;
+    for (let index = 0; index < totalQuestions; index++)
     {
       if (AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
       {
-        correctAnswers++;
-        selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index], index);
+        countingCorrectAnswers++;
       }
     }
-    setCorrectAnswers(correctAnswers);
-  }, [AnswerFileContent, SubmissionFileContent]);
+    setCorrectAnswers(countingCorrectAnswers);
+  }, [AnswerFileContent, SubmissionFileContent])
 
-  
-
-  // Define the number of rows based on the maximum lines between the two files.
-  const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length);
+  const totalQuestions = Math.max(AnswerFileContent.length, SubmissionFileContent.length); // Define the number of rows based on the maximum lines between the two files.
 
   return (
     <div>
@@ -114,10 +110,7 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])}/>
-                  {/* <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/> */}
-                  {/* <img id = {`Mark${index}`} src = {Mark[index]} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/> */}
-
+                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])}/>
                 </td>
               </tr>
             )
