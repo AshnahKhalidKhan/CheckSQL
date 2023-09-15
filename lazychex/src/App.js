@@ -11,7 +11,6 @@ function App() {
   */
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
   const [SubmissionFileContent, setSubmissionFileContent] = useState([]);
-  const [Mark, setMark] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
 
   const handleAnswerFileSelect = (line) =>
@@ -34,15 +33,15 @@ function App() {
     setSubmissionFileContent([]);
   };
 
-  const selectTickOrCross = (AnswerText, SubmissionText, index) =>
+  const selectTickOrCross = (AnswerText, SubmissionText) =>
   {
     console.log("AnswerText: ", AnswerText, "SubmissionText: ", SubmissionText, "index: ", index);
     if (AnswerText == SubmissionText)
     {
-      Mark[index] = "Tick.png";
+      return "Tick.png";
     }
     else
-      Mark[index] = "Cross.png";
+      return "Cross.png";
   };
 
   const changeImage = (imageKaNaam, index) =>
