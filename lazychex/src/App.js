@@ -43,6 +43,23 @@ function App() {
       return "Cross.png";
   };
 
+  const toggleImage = (index) =>
+  {
+    if (document.getElementById(`Mark${index}`).src.endsWith("Tick.png"))
+    // Alternately, I can try this: if (img.src == "http://localhost:3000/Tick.png")
+    {
+      document.getElementById(`Mark${index}`).src = "Cross.png";
+      let countingCorrectAnswers = CorrectAnswers - 1;
+      setCorrectAnswers(countingCorrectAnswers);
+    }
+    else
+    {
+      document.getElementById(`Mark${index}`).src = "Tick.png";
+      let countingCorrectAnswers = CorrectAnswers + 1;
+      setCorrectAnswers(countingCorrectAnswers);
+    }
+  };
+
   useEffect(() =>
   {
     let countingCorrectAnswers = 0;
@@ -110,7 +127,7 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])}/>
+                  <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {() => toggleImage(index)}/>
                 </td>
               </tr>
             )
