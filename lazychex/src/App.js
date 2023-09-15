@@ -132,9 +132,9 @@ function App() {
                   <QueryBox id = {`SubmissionFileInputDisplay${index}`} fileContent = {SubmissionFileContent[index] || ""} key = {`SubmissionFileInputDisplay${index}`}/>
                 </td>
                 <td>
-                  {/* <img src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {}/> */}
+                  <img src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])}/>
                   {/* <img id = {`Mark${index}`} src = {selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index])} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/> */}
-                  <img id = {`Mark${index}`} src = {Mark[index]} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/>
+                  {/* <img id = {`Mark${index}`} src = {Mark[index]} onClick = {changeImage(selectTickOrCross(AnswerFileContent[index], SubmissionFileContent[index]), index)}/> */}
 
                 </td>
               </tr>
