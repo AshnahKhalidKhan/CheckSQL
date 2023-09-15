@@ -35,7 +35,6 @@ function App() {
 
   const selectTickOrCross = (AnswerText, SubmissionText) =>
   {
-    console.log("AnswerText: ", AnswerText, "SubmissionText: ", SubmissionText, "index: ", index);
     if (AnswerText == SubmissionText)
     {
       return "Tick.png";
@@ -43,22 +42,6 @@ function App() {
     else
       return "Cross.png";
   };
-
-  const changeImage = (imageKaNaam, index) =>
-  {
-    if (imageKaNaam == "Tick.png")
-    {
-      Mark[index] = "Cross.png";
-      // let a = CorrectAnswers - 1;
-      // setCorrectAnswers(a);
-    }
-    else
-    {
-      Mark[index] = "Tick.png";
-      // let a = CorrectAnswers + 1;
-      // setCorrectAnswers(a);
-    }
-  }
 
   useEffect(() =>
   {
