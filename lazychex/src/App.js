@@ -93,12 +93,12 @@ function App() {
         <h1>LazyCheX or CheckSQL</h1>
       </div>
       <div className = "Section">
-      <circle
+      {/* <circle
           style={{color: red, fontSize: '120px'}}
           cx={radius}
           cy={radius}
           r={radius}
-        ></circle>
+        ></circle> */}
         <h1 className = "Scoreboard">Correct Answers: {CorrectAnswers}/{TotalQuestions}</h1>
         <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
       </div>
