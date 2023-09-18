@@ -1,3 +1,4 @@
+import { Padding } from "@mui/icons-material";
 import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
@@ -9,6 +10,9 @@ function App() {
   const [Mark, setMark] = useState([]);
   const [CorrectAnswers, setCorrectAnswers] = useState(0);
   const [OutOfSix, setOutOfSix] = useState(0);
+
+  const TotalQuestions = AnswerFileContent.length;
+  const TotalLines = Math.max(AnswerFileContent.length, SubmissionFileContent.length); // maximum lines between the two files
 
   const handleAnswerFileSelect = (line) =>
   {
@@ -41,9 +45,6 @@ function App() {
       setOutOfSix(((CorrectAnswers/TotalQuestions)*6).toFixed(2));
     }
   }, Mark);
-
-  const TotalQuestions = AnswerFileContent.length;
-  const TotalLines = Math.max(AnswerFileContent.length, SubmissionFileContent.length); // Define the number of rows based on the maximum lines between the two files.
 
   useEffect(() =>
   {
@@ -88,10 +89,9 @@ function App() {
       <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
       </div>
-      <div>
-        <h1>Total Questions: {TotalQuestions}</h1>
-        <h1>Correct Answers: {CorrectAnswers}</h1>
-        <h1>Out of 6: {OutOfSix}</h1>
+      <div className = "Section">
+        <h1 className = "Scoreboard">Correct Answers: {CorrectAnswers}/{TotalQuestions}</h1>
+        <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
       </div>
       <div className = "Section">
         <div className = "MakeThemAppearSideBySideInSameLine">

@@ -115,3 +115,11 @@ td img
   height: 50%;
   vertical-align: middle;
 }
+
+.Scoreboard
+{
+  display: inline-block;
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
