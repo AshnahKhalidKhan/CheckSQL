@@ -3,6 +3,8 @@ import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
 import React, {useState, useEffect} from "react";
+import { colors } from "@mui/material";
+import { red } from "@mui/material/colors";
 
 function App() {
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
@@ -84,12 +86,19 @@ function App() {
     setCorrectAnswers(newCount);
   };
 
+  const radius = '10%';
   return (
     <div>
       <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
       </div>
       <div className = "Section">
+      <circle
+          style={{color: red, fontSize: '120px'}}
+          cx={radius}
+          cy={radius}
+          r={radius}
+        ></circle>
         <h1 className = "Scoreboard">Correct Answers: {CorrectAnswers}/{TotalQuestions}</h1>
         <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
       </div>
