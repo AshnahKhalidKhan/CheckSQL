@@ -92,13 +92,20 @@ function App() {
       <div className = "Title">
         <h1>LazyCheX or CheckSQL</h1>
       </div>
+
+      <div className="donut-chart">
+        <div className="donut-circle">
+          <div
+            className="donut-segment"
+            style={{
+              transform: `rotate(${(percentage / 100) * 360}deg)`,
+            }}
+          ></div>
+          <div className="donut-text">{`${Math.round(percentage)}%`}</div>
+        </div>
+      </div>
+
       <div className = "Section">
-      {/* <circle
-          style={{color: red, fontSize: '120px'}}
-          cx={radius}
-          cy={radius}
-          r={radius}
-        ></circle> */}
         <h1 className = "Scoreboard">Correct Answers: {CorrectAnswers}/{TotalQuestions}</h1>
         <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
       </div>
