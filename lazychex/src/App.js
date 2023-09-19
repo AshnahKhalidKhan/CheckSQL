@@ -1,10 +1,7 @@
-import { Padding } from "@mui/icons-material";
 import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
 import React, {useState, useEffect} from "react";
-import { colors } from "@mui/material";
-import { red } from "@mui/material/colors";
 
 function App() {
   const [AnswerFileContent, setAnswerFileContent] = useState([]);
@@ -86,13 +83,17 @@ function App() {
     setCorrectAnswers(newCount);
   };
 
-  const radius = '10%';
-  return (
-    <div>
-      <div className = "Title">
-        <h1>LazyCheX or CheckSQL</h1>
-      </div>
 
+  
+  const calculatePercentage = () => {
+    if (TotalQuestions === 0) return 0;
+    return (CorrectAnswers / TotalQuestions) * 100;
+  };
+
+  const renderDonutChart = () => {
+    const percentage = calculatePercentage();
+
+    return (
       <div className="donut-chart">
         <div className="donut-circle">
           <div
@@ -103,6 +104,14 @@ function App() {
           ></div>
           <div className="donut-text">{`${Math.round(percentage)}%`}</div>
         </div>
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      <div className = "Title">
+        <h1>LazyCheX or CheckSQL</h1>
       </div>
 
       <div className = "Section">
