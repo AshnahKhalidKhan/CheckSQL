@@ -1,8 +1,15 @@
-// FileInput.js
-import React, {useState} from 'react';
+import "./FileInput.css";
+import React, {useState, useRef} from 'react';
 
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {
+  const fileReference = useRef(null);
+
+  const buttonClickedSoSelectFile = () =>
+  {
+    fileReference.current.click()
+  }
+
   const handleFileChange = (event) =>
   {
     const file = event.target.files[0];
@@ -29,7 +36,11 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
 
   return (
     <div>
-      <input type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs}/>
+      <input className = "HiddenInput" type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
+      <button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
+        {uniqueKeyPropToDifferentiateInputs}
+        <img src = ""}
+      </button>
     </div>
   );
 }

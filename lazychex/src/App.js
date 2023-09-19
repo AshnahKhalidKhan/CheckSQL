@@ -83,31 +83,6 @@ function App() {
     setCorrectAnswers(newCount);
   };
 
-
-  
-  const calculatePercentage = () => {
-    if (TotalQuestions === 0) return 0;
-    return (CorrectAnswers / TotalQuestions) * 100;
-  };
-
-  const renderDonutChart = () => {
-    const percentage = calculatePercentage();
-
-    return (
-      <div className="donut-chart">
-        <div className="donut-circle">
-          <div
-            className="donut-segment"
-            style={{
-              transform: `rotate(${(percentage / 100) * 360}deg)`,
-            }}
-          ></div>
-          <div className="donut-text">{`${Math.round(percentage)}%`}</div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div>
       <div className = "Title">
@@ -126,6 +101,8 @@ function App() {
           <FileInput id = "SubmissionFileInput" onFileSelect = {handleSubmissionFileSelect} uniqueKeyPropToDifferentiateInputs = "SubmissionFileInput" clearContent = {clearSubmissionFileInputContent}/>
         </div>
       </div>
+
+      
 
       {/* THIS IS AN IMPORTANT COMMENT ---> We learned a lot from this, Ash.
       {AnswerFileContent.map((line, index) =>
