@@ -1,5 +1,7 @@
 import "./FileInput.css";
 import React, {useState, useRef} from 'react';
+import Button from '@mui/material/Button';
+import UploadFileIcon from '@mui/icons-material/UploadFileRounded';
 
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {
@@ -37,10 +39,9 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
   return (
     <div>
       <input className = "HiddenInput" type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
-      <button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
+      <Button className = "InputButton" startIcon = {<UploadFileIcon/>} onClick = {buttonClickedSoSelectFile}>
         {uniqueKeyPropToDifferentiateInputs}
-        <img src = ""}
-      </button>
+        </Button>
     </div>
   );
 }
