@@ -7,5 +7,10 @@
 {
     color: green;
     text-align: center;
-    size: 20%;
+}
+
+.InputButtonText
+{
+    color: green;
+    text-align: center;
 }
