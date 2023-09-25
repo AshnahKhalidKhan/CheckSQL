@@ -2,6 +2,7 @@ import "./FileInput.css";
 import React, {useState, useRef} from 'react';
 import Button from '@mui/material/Button';
 import UploadFileIcon from '@mui/icons-material/UploadFileRounded';
+import { PriceChange } from "@mui/icons-material";
 
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {
@@ -113,9 +114,9 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
                 }
               }
             }
-            onFileSelect(newLine);
+            processedLine = newLine;
           }
-           // Send each line to the callback
+          onFileSelect(processedLine);
         }
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
