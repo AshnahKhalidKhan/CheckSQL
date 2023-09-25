@@ -31,7 +31,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         for (const line of lines)
         {
           let processedLine = line.toLowerCase();
-          if (processedLine.startsWith("") == false)
+          if (processedLine.startsWith("--") == false && processedLine.length !== 0)
           {
             const charArray = processedLine.split("");
             let newLine = "";
@@ -115,8 +115,8 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
               }
             }
             processedLine = newLine;
+            onFileSelect(processedLine);
           }
-          onFileSelect(processedLine);
         }
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
