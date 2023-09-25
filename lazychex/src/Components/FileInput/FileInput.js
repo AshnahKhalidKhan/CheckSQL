@@ -29,7 +29,93 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         clearContent(); // Clear content before adding new lines
         for (const line of lines)
         {
-          onFileSelect(line); // Send each line to the callback
+          let processedLine = line.toLowerCase();
+          if (processedLine.startsWith("") == false)
+          {
+            const charArray = processedLine.split("");
+            let newLine = "";
+            for (let i = 0; i < processedLine.length; i++)
+            {
+              switch (charArray[i])
+              {
+                case ' ':
+                {
+                  if (newLine.charAt(newLine.length - 1) !== ' ')
+                  {
+                    if (i + 1 < processedLine.length && (charArray[i + 1] === ')' || charArray[i + 1] === ','))
+                    {
+                      i++;
+                    }
+                    newLine += charArray[i];
+                  }
+                  break;
+                }
+                case '<':
+                {
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ')
+                  {
+                    newLine += ' ';
+                  }
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] !== ' ' && charArray[i + 1] !== '=')
+                  {
+                    newLine += ' ';
+                  }
+                  break;
+                }
+                case '>':
+                {
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ')
+                  {
+                    newLine += ' ';
+                  }
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] !== ' ' && charArray[i + 1] !== '=')
+                  {
+                    newLine += ' ';
+                  }
+                  break;
+                }
+                case '=':
+                {
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ' && charArray[i - 1] !== '>' && charArray[i - 1] !== '<')
+                  {
+                    newLine += ' ';
+                  }
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] !== ' ')
+                  {
+                    newLine += ' ';
+                  }
+                  break;
+                }
+                case ',':
+                {
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] !== ' ')
+                  {
+                    newLine += ' ';
+                  }
+                  break;
+                }
+                case '(':
+                {
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] === ' ')
+                  {
+                    i++;
+                  }
+                  break;
+                }
+                default:
+                {
+                  newLine += charArray[i];
+                }
+              }
+            }
+            onFileSelect(newLine);
+          }
+           // Send each line to the callback
         }
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
