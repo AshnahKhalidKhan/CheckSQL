@@ -2,6 +2,7 @@ import "./FileInput.css";
 import React, {useState, useRef} from 'react';
 import Button from '@mui/material/Button';
 import UploadFileIcon from '@mui/icons-material/UploadFileRounded';
+import FileUploadedIcon from '@mui/icons-material/TaskRounded';
 import { PriceChange } from "@mui/icons-material";
 
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
@@ -126,7 +127,9 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
   return (
     <div>
       <input className = "HiddenInput" type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
-      <Button className = "InputButton" startIcon = {<UploadFileIcon style = {{color: "green", fontSize: "500%"}}/>} onClick = {buttonClickedSoSelectFile}>
+      <Button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
+        <UploadFileIcon className = "UploadFileIcon"/>
+        <FileUploadedIcon className = "FileUploadedIcon"/>
         <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span>
       </Button>
     </div>

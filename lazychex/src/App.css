@@ -82,6 +82,8 @@ td img
   column-span: 2;
   border: 2px solid rgb(39, 162, 39);
   border-radius: 10px;
+  font-size: 200%;
+  vertical-align: middle;
 }
 
 .ColumnWithOneFifthWidthOfTable

@@ -7,10 +7,36 @@
 {
     color: green;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .InputButtonText
 {
     color: green;
     text-align: center;
+}
+
+.InputButton .UploadFileIcon
+{
+    color: grey;
+    font-size: 700%;
+}
+
+.InputButton .UploadFileIcon:hover
+{
+    color: rgb(68, 67, 67);
+    font-size: 700%;
+}
+
+.InputButton .FileUploadedIcon
+{
+    color: green;
+    font-size: 700%;
+}
+
+.InputButton .FileUploadedIcon:hover
+{
+    color: rgb(1, 100, 1);
+    font-size: 700%;
 }
