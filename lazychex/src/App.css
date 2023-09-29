@@ -36,6 +36,7 @@
 
 .Section
 {
+  /* position: fixed; */
   width: 100%;
   margin: 'auto';
   text-align: center;
@@ -102,6 +103,7 @@ td img
 
 .Scoreboard
 {
+  position: fixed;
   display: inline-block;
   text-align: center;
   padding-left: 2%;
