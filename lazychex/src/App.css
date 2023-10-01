@@ -103,9 +103,11 @@ td img
 
 .Scoreboard
 {
-  position: fixed;
+  /* position: fixed; */
   display: inline-block;
   text-align: center;
   padding-left: 2%;
   padding-right: 2%;
+  border: 2px solid black;
+  border-radius: 100%;
 }
