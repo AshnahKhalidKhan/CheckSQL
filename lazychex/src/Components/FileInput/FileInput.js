@@ -7,6 +7,7 @@ import FileUploadedIcon from '@mui/icons-material/TaskRounded';
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {
   const fileReference = useRef(null);
+  const [fileSelected, setFileSelected] = useState(false);
 
   const buttonClickedSoSelectFile = () =>
   {
@@ -120,6 +121,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         }
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
+      setFileSelected(true);
     }
   };
 
@@ -129,8 +131,10 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
       <Button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
         <UploadFileIcon className = "UploadFileIcon"/>
         <span className = "InputButtonText">Choose New File</span>
-        <FileUploadedIcon className = "FileUploadedIcon"/>
-        <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span>
+        {fileSelected ? <FileUploadedIcon className = "FileUploadedIcon"/> : null}
+        {fileSelected ? <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span> : null}
+        {/* <FileUploadedIcon className = "FileUploadedIcon"/>
+        <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span> */}
       </Button>
     </div>
   );
