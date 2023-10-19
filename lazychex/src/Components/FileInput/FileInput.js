@@ -128,6 +128,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
       <input className = "HiddenInput" type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
       <Button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
         <UploadFileIcon className = "UploadFileIcon"/>
+        <span className = "InputButtonText">Choose New File</span>
         <FileUploadedIcon className = "FileUploadedIcon"/>
         <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span>
       </Button>
