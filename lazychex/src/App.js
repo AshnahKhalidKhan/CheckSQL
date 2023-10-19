@@ -90,8 +90,8 @@ function App() {
       </div>
 
       <div className = "Section">
-        <h1 className = "Scoreboard">Correct Answers: <span style = {'color' = 'green'}>{CorrectAnswers}/{TotalQuestions}</span></h1>
-        <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
+        <h1 className = "Scoreboard">Correct Answers: <span style = {{color: 'green'}}>{CorrectAnswers}/{TotalQuestions}</span></h1>
+        <h1 className = "Scoreboard">Score: <span style = {{color: 'green'}}>{OutOfSix}/6</span></h1>
       </div>
       <div className = "Section">
         <div className = "MakeThemAppearSideBySideInSameLine">
@@ -123,7 +123,7 @@ function App() {
             Submission File
           </th>
           <th className = "ColumnWithOneFifthWidthOfTable">
-            Mark
+            Mark (Click to change)
           </th>
         </thead>
         <tbody>
