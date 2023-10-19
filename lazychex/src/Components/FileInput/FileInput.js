@@ -135,8 +135,6 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         <span className = "InputButtonText">Choose New File</span>
         {fileSelected ? <FileUploadedIcon className = "FileUploadedIcon"/> : null}
         {fileSelected ? <span className = "InputButtonText">{fileName}</span> : null}
-        {/* <FileUploadedIcon className = "FileUploadedIcon"/>
-        <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span> */}
       </Button>
     </div>
   );
