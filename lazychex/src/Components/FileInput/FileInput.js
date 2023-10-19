@@ -8,6 +8,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
 {
   const fileReference = useRef(null);
   const [fileSelected, setFileSelected] = useState(false);
+  const [fileName, setFileName] = useState('');
 
   const buttonClickedSoSelectFile = () =>
   {
@@ -122,6 +123,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
       setFileSelected(true);
+      setFileName(file.name);
     }
   };
 
@@ -132,7 +134,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         <UploadFileIcon className = "UploadFileIcon"/>
         <span className = "InputButtonText">Choose New File</span>
         {fileSelected ? <FileUploadedIcon className = "FileUploadedIcon"/> : null}
-        {fileSelected ? <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span> : null}
+        {fileSelected ? <span className = "InputButtonText">{fileName}</span> : null}
         {/* <FileUploadedIcon className = "FileUploadedIcon"/>
         <span className = "InputButtonText">{uniqueKeyPropToDifferentiateInputs}</span> */}
       </Button>
