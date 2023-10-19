@@ -3,7 +3,6 @@ import React, {useState, useRef} from 'react';
 import Button from '@mui/material/Button';
 import UploadFileIcon from '@mui/icons-material/UploadFileRounded';
 import FileUploadedIcon from '@mui/icons-material/TaskRounded';
-import { PriceChange } from "@mui/icons-material";
 
 function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearContent})
 {

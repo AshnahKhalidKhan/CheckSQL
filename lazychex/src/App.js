@@ -90,7 +90,7 @@ function App() {
       </div>
 
       <div className = "Section">
-        <h1 className = "Scoreboard">Correct Answers: {CorrectAnswers}/{TotalQuestions}</h1>
+        <h1 className = "Scoreboard">Correct Answers: <span style = {'color' = 'green'}>{CorrectAnswers}/{TotalQuestions}</span></h1>
         <h1 className = "Scoreboard">Score: {OutOfSix}/6</h1>
       </div>
       <div className = "Section">

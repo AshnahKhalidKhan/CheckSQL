@@ -70,6 +70,7 @@ table, th, td
 
 td img
 {
+  cursor: pointer;
   width: 50%;
   height: 50%;
   vertical-align: middle;

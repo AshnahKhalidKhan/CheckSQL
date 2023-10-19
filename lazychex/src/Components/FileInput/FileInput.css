@@ -22,7 +22,7 @@
 {
     color: grey;
     font-size: 700%;
-    display: none;
+    /* display: none; */
 }
 
 .InputButton .UploadFileIcon:hover
