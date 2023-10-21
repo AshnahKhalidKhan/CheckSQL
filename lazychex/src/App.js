@@ -1,3 +1,14 @@
+/*
+  THINGS TO DO:
+  - Doughnut chart for Scores
+  - Doughnut chart for Correct Answes
+  - Sticky navbar
+  - Logo
+  - Golden Ratio on screen
+  - Golden Ratio text sizes
+*/
+
+
 import "./App.css";
 import FileInput from "./Components/FileInput/FileInput";
 import QueryBox from "./Components/QueryBox/QueryBox";
