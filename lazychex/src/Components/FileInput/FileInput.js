@@ -20,7 +20,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
     const file = event.target.files[0];
     // ^event.target refers to the input element, and .files is an array containing the selected files. We assume there's only one selected file ([0]).
 
-    if (file != null && file != undefined)
+    if (file !== null && file !== undefined)
     {
       const reader = new FileReader();
       // We set up an onload event handler for the reader. When the file is successfully loaded, this handler is called.
@@ -33,8 +33,9 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         for (const line of lines)
         {
           let processedLine = line.toLowerCase();
-          if (processedLine.startsWith("--") == false && processedLine.length !== 0)
+          if (processedLine.startsWith("--") === false && processedLine.length !== 0 && processedLine.trim().length !== 0)
           {
+            console.log(line.length, processedLine.length);
             const charArray = processedLine.split("");
             let newLine = "";
             for (let i = 0; i < processedLine.length; i++)
@@ -119,6 +120,10 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
             processedLine = newLine;
             onFileSelect(processedLine);
           }
+          // else
+          // {
+          //   console.log('Masla');
+          // }
         }
       };
       reader.readAsText(file); //readAsText works like Java wala Scanner
@@ -129,7 +134,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
 
   return (
     <div>
-      <input className = "HiddenInput" type = "file" accept = ".txt" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
+      <input className = "HiddenInput" type = "file" accept = ".sql" onChange = {handleFileChange} key = {uniqueKeyPropToDifferentiateInputs} ref = {fileReference}/>
       <Button className = "InputButton" onClick = {buttonClickedSoSelectFile}>
         <UploadFileIcon className = "UploadFileIcon"/>
         <span className = "InputButtonText">Choose New File</span>

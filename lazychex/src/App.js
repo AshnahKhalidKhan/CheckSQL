@@ -62,6 +62,7 @@ function App() {
     let newMark = [];
     for (let index = 0; index < TotalLines; index++)
     {
+      console.log(SubmissionFileContent[index].length, AnswerFileContent[index].length)
       if (AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
       {
         countingCorrectAnswers++;
