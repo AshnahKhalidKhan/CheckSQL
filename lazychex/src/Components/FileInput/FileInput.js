@@ -109,10 +109,23 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
                 }
                 case '(':
                 {
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ')
+                  {
+                    newLine += ' ';
+                  }
                   newLine += charArray[i];
                   if (i + 1 < processedLine.length && charArray[i + 1] === ' ')
                   {
                     i++;
+                  }
+                  break;
+                }
+                case ')':
+                {
+                  newLine += charArray[i];
+                  if (i + 1 < processedLine.length && charArray[i + 1] !== ' ')
+                  {
+                    newLine += ' ';
                   }
                   break;
                 }
