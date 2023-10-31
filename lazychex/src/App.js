@@ -62,10 +62,10 @@ function App() {
     let newMark = [];
     for (let index = 0; index < TotalLines; index++)
     {
-      // if (AnswerFileContent[index] !== undefined && SubmissionFileContent[index] !== undefined)
-      // {
-      //   console.log(SubmissionFileContent[index].split("") + "\n" + AnswerFileContent[index].split(""));
-      // }
+      if (AnswerFileContent[index] !== undefined && SubmissionFileContent[index] !== undefined)
+      {
+        console.log(AnswerFileContent[index].split("") + "\n" + SubmissionFileContent[index].split(""));
+      }
       if (AnswerFileContent[index] !== undefined && SubmissionFileContent[index] !== undefined && AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
       {
         countingCorrectAnswers++;

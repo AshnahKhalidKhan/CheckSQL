@@ -47,11 +47,23 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
                 {
                   break;
                 }
+                case '	':
+                {
+                  if (newLine.charAt(newLine.length - 1) !== ';' && newLine.charAt(newLine.length - 1) !== ' ')
+                  {
+                    if (i + 1 < processedLine.length && (charArray[i + 1] === ' ' || charArray[i + 1] === ' ' || charArray[i + 1] === ')' || charArray[i + 1] === ',' || charArray[i + 1] === ';'))
+                    {
+                      i++;
+                    }
+                    newLine += charArray[i];
+                  }
+                  break;
+                }
                 case ' ':
                 {
                   if (newLine.charAt(newLine.length - 1) !== ';' && newLine.charAt(newLine.length - 1) !== ' ')
                   {
-                    if (i + 1 < processedLine.length && (charArray[i + 1] === ')' || charArray[i + 1] === ','))
+                    if (i + 1 < processedLine.length && (charArray[i + 1] === ' ' || charArray[i + 1] === ')' || charArray[i + 1] === ',' || charArray[i + 1] === ';'))
                     {
                       i++;
                     }
@@ -87,7 +99,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
                 }
                 case '=':
                 {
-                  if (i - 1 >= 0 && charArray[i - 1] !== ' ' && charArray[i - 1] !== '>' && charArray[i - 1] !== '<' && charArray[i - 1] !== '!')
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ' && charArray[i - 1] !== '>' && charArray[i - 1] !== '<' && charArray[i - 1] !== '!' && newLine.charAt(newLine.length - 1) !== ' ')
                   {
                     newLine += ' ';
                   }
