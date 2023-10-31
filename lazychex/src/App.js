@@ -62,8 +62,11 @@ function App() {
     let newMark = [];
     for (let index = 0; index < TotalLines; index++)
     {
-      console.log(SubmissionFileContent[index].length, AnswerFileContent[index].length)
-      if (AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
+      // if (AnswerFileContent[index] !== undefined && SubmissionFileContent[index] !== undefined)
+      // {
+      //   console.log(SubmissionFileContent[index].split("") + "\n" + AnswerFileContent[index].split(""));
+      // }
+      if (AnswerFileContent[index] !== undefined && SubmissionFileContent[index] !== undefined && AnswerFileContent[index] !== "" && SubmissionFileContent[index] !== "" && AnswerFileContent[index] === SubmissionFileContent[index])
       {
         countingCorrectAnswers++;
         newMark[index] = "Tick.png";

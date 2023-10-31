@@ -35,16 +35,21 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
           let processedLine = line.toLowerCase();
           if (processedLine.startsWith("--") === false && processedLine.length !== 0 && processedLine.trim().length !== 0)
           {
-            console.log(line.length, processedLine.length);
+            // console.log(line.length, processedLine.length);
             const charArray = processedLine.split("");
+            // console.log(charArray);
             let newLine = "";
             for (let i = 0; i < processedLine.length; i++)
             {
               switch (charArray[i])
               {
+                case '\r':
+                {
+                  break;
+                }
                 case ' ':
                 {
-                  if (newLine.charAt(newLine.length - 1) !== ' ')
+                  if (newLine.charAt(newLine.length - 1) !== ';' && newLine.charAt(newLine.length - 1) !== ' ')
                   {
                     if (i + 1 < processedLine.length && (charArray[i + 1] === ')' || charArray[i + 1] === ','))
                     {
