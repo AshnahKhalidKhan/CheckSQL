@@ -87,7 +87,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
                 }
                 case '=':
                 {
-                  if (i - 1 >= 0 && charArray[i - 1] !== ' ' && charArray[i - 1] !== '>' && charArray[i - 1] !== '<')
+                  if (i - 1 >= 0 && charArray[i - 1] !== ' ' && charArray[i - 1] !== '>' && charArray[i - 1] !== '<' && charArray[i - 1] !== '!')
                   {
                     newLine += ' ';
                   }
