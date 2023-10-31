@@ -33,7 +33,7 @@ function FileInput({onFileSelect, uniqueKeyPropToDifferentiateInputs, clearConte
         for (const line of lines)
         {
           let processedLine = line.toLowerCase();
-          if (processedLine.startsWith("--") === false && processedLine.length !== 0 && processedLine.trim().length !== 0)
+          if (processedLine.trim().startsWith("--") === false && processedLine.length !== 0 && processedLine.trim().length !== 0)
           {
             // console.log(line.length, processedLine.length);
             const charArray = processedLine.split("");
