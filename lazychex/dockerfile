@@ -2,12 +2,12 @@
 
 FROM node:18-alpine
 
-ENV variable_ka_naam = variable_ki_value
-ENV variable_ka_naam = variable_ki_nayi_value def = $variable_ka_naam
-ENV nayay_variable_ka_naam = $variable_ka_naam
+ENV variable_ka_naam=variable_ki_value
+ENV variable_ka_naam=variable_ki_nayi_value def = $variable_ka_naam
+ENV nayay_variable_ka_naam=$variable_ka_naam
 
 
-ENV directory_name = lazychex
+ENV directory_name=lazychex
 WORKDIR /$directory_name/
 
 COPY public/ /$directory_name/public
