@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1
+
+FROM node:18-alpine
+
+ENV variable_ka_naam = variable_ki_value
+ENV variable_ka_naam = variable_ki_nayi_value def = $variable_ka_naam
+ENV nayay_variable_ka_naam = $variable_ka_naam
+
+
+ENV directory_name = lazychex
+WORKDIR /$directory_name/
+
+COPY public/ /$directory_name/public
+COPY src/ /$directory_name/src
+COPY package.json /$directory_name/
+
+RUN npm install
+
+CMD ["npm", "start"]
+
+EXPOSE 5000
+
+# NOTE-TO-SELF: Make sure I am in the directory of my dockerfile before this
+# docker image build -t new_image_ka_naam:new_tag_ka_naam .
+# docker run -dp 127.0.0.1:host_port_number:exposed_application_port_number new_image_ka_naam:new_tag_ka_naam
+
