@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# Create a base image
+# Use NodeJs version 18 alpine as the base image for the container
 FROM node:18-alpine
 
 # I was just practicing how to use ENV variables; please ignore these 3 lines
@@ -8,10 +8,10 @@ ENV variable_ka_naam = variable_ki_value
 ENV variable_ka_naam = variable_ki_nayi_value def = $variable_ka_naam
 ENV nayay_variable_ka_naam = $variable_ka_naam
 
-# Declare an environment variable named lazychex (the name of our React app project)
+# Declare an environment variable named 'directory_name' and set it to the value 'lazychex' (the name of our React app project)
 ENV directory_name = lazychex
 
-# Set the working directory to the name of our React app project root directory (i.e. lazychex) so that all commands executed while building the image will be executed here
+# Set the working directory of our image/container to the name of our React app project root directory (i.e. lazychex) so that all commands executed while building the image will be executed here
 WORKDIR /$directory_name/
 
 # Copy all files in the 'public' folder from our React app project to our working directory, so we can run our application
@@ -41,6 +41,6 @@ CMD ["npm", "start"]
 
 
 
-# NOTE-TO-SELF: Make sure I am in the directory of my dockerfile before this
+# NOTE-TO-SELF: Make sure I am in the directory of my dockerfile before this.
 # docker image build -t new_image_ka_naam:new_tag_ka_naam .
 # docker run -dp 127.0.0.1:host_port_number:exposed_application_port_number new_image_ka_naam:new_tag_ka_naam
