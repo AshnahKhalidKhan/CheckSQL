@@ -1,26 +1,46 @@
 # syntax=docker/dockerfile:1
 
+# Create a base image
 FROM node:18-alpine
 
+# I was just practicing how to use ENV variables; please ignore these 3 lines
 ENV variable_ka_naam = variable_ki_value
 ENV variable_ka_naam = variable_ki_nayi_value def = $variable_ka_naam
 ENV nayay_variable_ka_naam = $variable_ka_naam
 
-
+# Declare an environment variable named lazychex (the name of our React app project)
 ENV directory_name = lazychex
+
+# Set the working directory to the name of our React app project root directory (i.e. lazychex) so that all commands executed while building the image will be executed here
 WORKDIR /$directory_name/
 
+# Copy all files in the 'public' folder from our React app project to our working directory, so we can run our application
 COPY public/ /$directory_name/public
+
+# Copy all files in the 'src' folder from our React app project to our working directory, so we can run our application
 COPY src/ /$directory_name/src
+
+# Copy the package.json file from our React app project to our working directory, so we can run our application
 COPY package.json /$directory_name/
 
+# Copy the .env file from our React app project to our working directory, so we can run our application
+COPY .env /$directory_name/
+
+# Run the command "npm install" in the working directory of our image; this will install all dependcies in the package.json file and make the node modules folder
 RUN npm install
 
+# Make the port 5000 available in your app's container
+EXPOSE 5000
+
+# When the container is started, run "npm start"
 CMD ["npm", "start"]
 
-EXPOSE 5000
+
+
+
+
+
 
 # NOTE-TO-SELF: Make sure I am in the directory of my dockerfile before this
 # docker image build -t new_image_ka_naam:new_tag_ka_naam .
 # docker run -dp 127.0.0.1:host_port_number:exposed_application_port_number new_image_ka_naam:new_tag_ka_naam
-
