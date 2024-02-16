@@ -29,7 +29,7 @@ COPY .env /$directory_name/
 # Run the command "npm install" in the working directory of our image; this will install all dependcies in the package.json file and make the node modules folder
 RUN npm install
 
-# Make the port 5000 available in your app's container
+# Make the port 5000 available in our app's container
 EXPOSE 5000
 
 # When the container is started, run "npm start"
