@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: bold-sammet
-        image: aashnahkhalidkhan00210/assignment3:tag_number  # This will be updated by Jenkins
+        image: ashnahkhalidkhan00210/assignment3:tag_number_${BUILD_NUMBER}  # This will be updated by Jenkins
         ports:
         - containerPort: 3000
