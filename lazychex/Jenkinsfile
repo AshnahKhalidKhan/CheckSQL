@@ -23,7 +23,7 @@ pipeline {
                         // sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
                         // sh "docker login -u $DOCKERHUB_USER --password-stdin docker.io"
                         // sh "echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io" //My password contained '$'' so I need to use a '\' before that as an escape character lol
-                        sh "docker login -u \"$DOCKERHUB_USER\" -p \"$DOCKERHUB_PASS\" docker.io"
+                        sh "docker login -u \"$DOCKERHUB_USER\" -p '$DOCKERHUB_PASS' docker.io"
                     }
                     sh "docker push ${imageName}"
                     sh "docker logout"
