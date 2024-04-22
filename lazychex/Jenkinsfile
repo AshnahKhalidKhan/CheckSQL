@@ -22,7 +22,7 @@ pipeline {
                         // echo "$DOCKERHUB_PASS"
                         // sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
                         // sh "docker login -u $DOCKERHUB_USER --password-stdin docker.io"
-                        sh "echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin docker.io"
+                        sh "echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
                     }
                     sh "docker push ${imageName}"
                     sh "docker logout"
