@@ -22,26 +22,25 @@ pipeline {
                         // echo "$DOCKERHUB_PASS"
                         // sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
                         // sh "docker login -u $DOCKERHUB_USER --password-stdin docker.io"
-                        // sh "echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io" //My password contained '$'' so I need to use a '\' before that as an escape character lol
-                        sh "docker login -u \"$DOCKERHUB_USER\" -p '$DOCKERHUB_PASS' docker.io"
+                        sh "docker login -u '$DOCKERHUB_USER' -p '$DOCKERHUB_PASS' docker.io" //My password contained '$'' so I need to use a '\' before that as an escape character lol
                     }
                     sh "docker push ${imageName}"
                     sh "docker logout"
                 }
             }
         }
-        // stage('Deploy to Kubernetes') {
-        //     steps {
-        //         script {
-        //             // Update the image in the deployment YAML file
-        //             def imageName = "muhammadhur/tutorial:${env.BUILD_NUMBER}"
-        //             sh "sed -i 's|muhammadhur/tutorial:latest|${imageName}|' ./deployment.yaml"
-        //             // Apply the deployment
-        //             withCredentials([file(credentialsId: 'kube', variable: 'KUBECONFIG')]) {
-        //                 sh 'kubectl apply -f ./deployment.yaml'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Update the image in the deployment YAML file
+                    def imageName = "ashnahkhalidkhan00210/assignment3:tag_number_${env.BUILD_NUMBER}"
+                    sh "sed -i 's|ashnahkhalidkhan00210/assignment3:tag_number|${imageName}|' ./lazychex/deployment.yaml"
+                    // Apply the deployment
+                    withCredentials([file(credentialsId: 'minikube_id', variable: 'KUBECONFIG')]) {
+                        sh 'kubectl apply -f ./lazychex/deployment.yaml'
+                    }
+                }
+            }
+        }
     }
 }
