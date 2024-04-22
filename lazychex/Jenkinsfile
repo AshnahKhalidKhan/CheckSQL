@@ -38,7 +38,7 @@ pipeline {
                     // Apply the deployment
                     withCredentials([file(credentialsId: 'minikube_id', variable: 'KUBECONFIG')]) {
                         // sh 'kubectl apply -f ./lazychex/deployment.yaml'
-                        sh 'kubectl apply --dry-run=client -f ./lazychex/deployment.yaml'
+                        sh 'kubectl apply --validate=false -f ./lazychex/deployment.yaml'
                     }
                 }
             }
