@@ -14,18 +14,18 @@ pipeline {
                 }
             }
         }
-        // stage('Push to DockerHub') {
-        //     steps {
-        //         script {
-        //             def imageName = "muhammadhur/tutorial:${env.BUILD_NUMBER}"
-        //             withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
-        //                 sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
-        //             }
-        //             sh "docker push ${imageName}"
-        //             sh "docker logout"
-        //         }
-        //     }
-        // }
+        stage('Push to DockerHub') {
+            steps {
+                script {
+                    def imageName = "ashnahkhalidkhan00210/assignment3:tag_number_${env.BUILD_NUMBER}"
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub_id', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
+                        sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
+                    }
+                    sh "docker push ${imageName}"
+                    sh "docker logout"
+                }
+            }
+        }
         // stage('Deploy to Kubernetes') {
         //     steps {
         //         script {
