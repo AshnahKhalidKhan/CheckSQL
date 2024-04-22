@@ -6,14 +6,14 @@ pipeline {
                 git branch: 'main', credentialsId: 'github_id', url: 'https://github.com/AshnahKhalidKhan/CheckSQL.git'
             }
         }
-        // stage('Build Docker Image') {
-        //     steps {
-        //         script {
-        //             def imageName = "muhammadhur/tutorial:${env.BUILD_NUMBER}"
-        //             sh "docker build -t ${imageName} ."
-        //         }
-        //     }
-        // }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    def imageName = "ashnahkhalidkhan00210/assignment3:tag_number_${env.BUILD_NUMBER}"
+                    sh "docker build -t ${imageName} ."
+                }
+            }
+        }
         // stage('Push to DockerHub') {
         //     steps {
         //         script {
