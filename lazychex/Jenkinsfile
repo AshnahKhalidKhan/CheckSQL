@@ -37,7 +37,9 @@ pipeline {
                     sh "sed -i 's|ashnahkhalidkhan00210/assignment3:tag_number|${imageName}|' ./lazychex/deployment.yaml"
                     // Apply the deployment
                     withCredentials([file(credentialsId: 'minikube_id', variable: 'KUBECONFIG')]) {
-                        sh 'kubectl apply -f ./lazychex/deployment.yaml'
+                        // sh 'kubectl apply -f ./lazychex/deployment.yaml'
+                        sh 'kubectl apply --dry-run=client -f ./lazychex/deployment.yaml
+'
                     }
                 }
             }
