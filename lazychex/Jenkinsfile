@@ -19,9 +19,10 @@ pipeline {
                 script {
                     def imageName = "ashnahkhalidkhan00210/assignment3:tag_number_${env.BUILD_NUMBER}"
                     withCredentials([usernamePassword(credentialsId: 'dockerhub_id', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
-                        echo "$DOCKERHUB_PASS"
+                        // echo "$DOCKERHUB_PASS"
                         // sh "docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS docker.io"
-                        sh "docker login -u $DOCKERHUB_USER --password-stdin docker.io"
+                        // sh "docker login -u $DOCKERHUB_USER --password-stdin docker.io"
+                        sh "echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin docker.io"
                     }
                     sh "docker push ${imageName}"
                     sh "docker logout"
